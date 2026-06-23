@@ -1,133 +1,477 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>90日ロードマップセッション | よりそる</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif; color: #333; background: #fff; padding-bottom: 80px; }
-    .hero { background: #f9f5f0; padding: 60px 20px; text-align: center; }
-    .hero h1 { font-size: 28px; line-height: 1.6; margin-bottom: 20px; color: #2c2c2c; }
-    .hero p { font-size: 16px; line-height: 1.9; color: #555; max-width: 600px; margin: 0 auto 30px; }
-    .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; display: block; border: 3px solid #c9a96e; }
-    .profile-name { font-size: 15px; color: #555; margin-bottom: 20px; }
-    .badges { margin-top: 10px; padding: 20px; background: #fff; border-radius: 8px; display: inline-block; }
-    .badge-title { font-size: 12px; color: #c9a96e; letter-spacing: 2px; margin-bottom: 8px; }
-    .badge-list { font-size: 14px; color: #555; margin-bottom: 4px; }
-    .section { padding: 50px 20px; max-width: 680px; margin: 0 auto; }
-    .section h2 { font-size: 22px; margin-bottom: 20px; color: #2c2c2c; border-left: 4px solid #c9a96e; padding-left: 12px; }
-    .section p { font-size: 15px; line-height: 1.9; margin-bottom: 16px; color: #444; }
-    .flow { background: #f9f5f0; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
-    .flow h3 { font-size: 16px; color: #c9a96e; margin-bottom: 8px; }
-    .flow p { font-size: 15px; margin-bottom: 0; }
-    .case { border: 1px solid #e8e0d5; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
-    .case p { font-size: 15px; margin-bottom: 0; }
-    .price-box { background: #2c2c2c; color: #fff; border-radius: 8px; padding: 30px; text-align: center; margin: 30px 0; }
-    .price-box .price-label { color: #fff; font-size: 16px; font-weight: bold; margin-bottom: 12px; }
-    .price-box .price { font-size: 36px; font-weight: bold; color: #c9a96e; margin-bottom: 8px; }
-    .price-box .price-sub { font-size: 15px; color: #fff; font-weight: bold; }
-    .cta-btn { display: block; background: #c9a96e; color: #fff; text-align: center; padding: 18px 30px; border-radius: 50px; font-size: 18px; font-weight: bold; text-decoration: none; max-width: 400px; margin: 0 auto; }
-    .cta-btn:hover { background: #b8925a; }
-    .note { font-size: 13px; color: #888; text-align: center; margin-top: 12px; }
-    .divider { border: none; border-top: 1px solid #e8e0d5; margin: 40px 0; }
-    .footer { background: #f9f5f0; padding: 30px 20px; text-align: center; font-size: 13px; color: #888; }
-    .footer a { color: #888; text-decoration: underline; }
-    .footer a:hover { color: #555; }
-
-    /* 固定ボタン */
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #2c2c2c; padding: 12px 20px; text-align: center; z-index: 999; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
-    .sticky-cta a { display: inline-block; background: #c9a96e; color: #fff; padding: 14px 40px; border-radius: 50px; font-size: 16px; font-weight: bold; text-decoration: none; }
-    .sticky-cta a:hover { background: #b8925a; }
-    .sticky-cta p { font-size: 12px; color: #aaa; margin-top: 4px; }
-  </style>
+<!DOCTYPE html><html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>90-Day Roadmap Session | CounselingSpace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dfe5d3",
+                        "forest-text": "#346410",
+                        "on-error": "#ffffff",
+                        "primary-container": "#6bb919",
+                        "surface-bright": "#f6fcea",
+                        "on-secondary-container": "#642f00",
+                        "surface-sage": "#E8F2DE",
+                        "tertiary-fixed-dim": "#ffade2",
+                        "surface-container-high": "#e5ead9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#396a00",
+                        "on-primary-fixed": "#0d2000",
+                        "inverse-on-surface": "#eef3e1",
+                        "inverse-surface": "#2d3227",
+                        "on-tertiary-fixed-variant": "#86006f",
+                        "warm-bg": "#FCFAF7",
+                        "outline-variant": "#c0cab2",
+                        "inverse-primary": "#8adb3e",
+                        "secondary-fixed-dim": "#ffb786",
+                        "on-surface-variant": "#414a37",
+                        "error-container": "#ffdad6",
+                        "on-background": "#181d13",
+                        "on-primary-fixed-variant": "#295000",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#a5f958",
+                        "tertiary-container": "#ff70d8",
+                        "surface-container-low": "#f1f6e4",
+                        "secondary-container": "#ff8928",
+                        "on-primary-container": "#224300",
+                        "outline": "#717a65",
+                        "background": "#f6fcea",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffd8ed",
+                        "surface-dim": "#d7dccb",
+                        "on-secondary-fixed-variant": "#723600",
+                        "primary-fixed-dim": "#8adb3e",
+                        "surface-container": "#ebf0df",
+                        "surface": "#f6fcea",
+                        "on-secondary-fixed": "#311300",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#a7228b",
+                        "primary": "#396a00",
+                        "on-surface": "#181d13",
+                        "on-tertiary-container": "#72005e",
+                        "secondary-fixed": "#ffdcc6",
+                        "secondary": "#964900",
+                        "on-tertiary-fixed": "#3b002f",
+                        "surface-container-highest": "#dfe5d3",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-padding-desktop": "80px",
+                        "section-gap": "64px",
+                        "container-padding-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Noto Sans JP"],
+                        "display-lg-mobile": ["Noto Sans JP"],
+                        "body-lg": ["Noto Sans JP"],
+                        "body-md": ["Noto Sans JP"],
+                        "price-display": ["Noto Sans JP"],
+                        "display-lg": ["Noto Sans JP"],
+                        "headline-md": ["Noto Sans JP"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "price-display": ["32px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "display-lg": ["36px", { "lineHeight": "1.4", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.5", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-active-state:active {
+            transform: scale(0.95);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 242, 222, 0.5);
+        }
+    </style>
 </head>
-<body>
-
-  <div class="hero">
-    <h1>60分で、3ヶ月先の自分に向けた<br>専用のロードマップを描く。</h1>
-    <p>「分かっているのに動けない」のは、意志の問題ではありません。あなただけの「やめること・やること・順番」が、まだ見つかっていないだけです。</p>
-    <img class="profile-img" src="%E9%AB%98%E6%9C%AC%E3%83%97%E3%83%AD%E3%83%95%20.JPG" alt="髙本玲代">
-    <p class="profile-name">よりそる代表　髙本玲代</p>
-    <div class="badges">
-      <p class="badge-title">メディア掲載・登壇実績</p>
-      <p class="badge-list">NHK｜Forbes｜日経新聞｜経済産業省認定</p>
-      <p class="badge-list">東京都・兵庫県・鳥取県・神戸市 自治体登壇</p>
-      <p class="badge-list">ポーラ｜デロイトトーマツ｜三菱グループ</p>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Header (TopAppBar) -->
+<header class="docked full-width top-0 sticky z-50 bg-transparent">
+<div class="flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop py-4 w-full max-w-[1140px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-forest-text dark:text-inverse-primary text-[32px]">spa</span>
+<span class="text-headline-md font-headline-md text-forest-text dark:text-inverse-primary">CounselingSpace</span>
+</div>
+<a class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-sm text-label-sm btn-active-state transition-all hover:bg-secondary hover:text-white" href="#pricing">
+                Book Session
+            </a>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center pt-8 pb-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-bright via-surface-bright/80 to-transparent z-10"></div>
+<img alt="" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHPEPoWC8S64F49q33VQCcEzGrbNr_RYduWNDkNZcKIeznewtMwPSjLz76x0mbHmQAFJwAMxDqXdzZjguG3ULprhI_IU2UAWDSfdDVZUIxRfft-GynZBaGd2-9z1LMLbrYNBrVXoaGP4LYO9MCFu0ocgvg3Ud5sw6x3W3sAVkv7-uDKylm2Kq8ApxEXHhhv03Nev1q-NQ8CLNRr7jnUg7ic66i3rWMkpOjCzFtPYhJONaMjaQ65ZWE-vABS6BxPtGYNSrf3NeYlXG">
+</div>
+<div class="relative z-20 w-full max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="max-w-2xl glass-card p-6 md:p-8 rounded-3xl">
+<span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm mb-6">
+                        Personalized Strategy Session
+                    </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background mb-6 leading-tight">
+                        60分で、3ヶ月先の自分に向けた<br>専用のロードマップを描く。
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                        「分かっているのに動けない」のは、意志の問題ではありません。あなただけの「やめること・やること・順番」が、まだ見つかっていないだけです。
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-headline-md text-headline-md shadow-lg btn-active-state hover:bg-secondary transition-all" href="#pricing">
+                            今すぐ申し込む
+                        </a>
+<div class="flex items-center gap-3 px-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional Japanese female counselor with a warm and supportive expression, medium length dark hair, wearing a neutral business casual blazer. Soft daylight lighting in a clean, modern home office setting with books and plants in the background. High-quality professional portrait photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLwzk47szvkM74WFRDeSK-VgAYy8Zv8wM9sdlN6fvr4k2VbqIwmPh8sV75bvrOl1F7iIRGKsyxSG2oVedWGfZDbhTFia9w0NxplYriWSS3fhcns_AhhTRDa5NhWi3K-SdlrRgSNeBjdFZWsXbyFkqYTDUSmVGh0m_Ma3vfKMDX19_e1JHqd9_rlItver7NPhzwOBF7snPnZ8SlZ8w1ho__H2m7L6ZFchTpL23Et2deUTKG3W13ktFTCXcQApiQ9NMs5Eu7ngKHoEui">
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">
+                                    +1k
+                                </div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">1,600件以上の実績データ</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise Section -->
+<section class="bg-white py-16">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop text-center">
+<p class="text-label-sm font-label-sm text-outline mb-8 tracking-widest uppercase">Expertise &amp; Recognition</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70">
+<div class="font-bold text-headline-md text-on-surface-variant">NHK</div>
+<div class="font-bold text-headline-md text-on-surface-variant">Forbes</div>
+<div class="font-bold text-headline-md text-on-surface-variant">日経新聞</div>
+<div class="font-bold text-headline-md text-on-surface-variant">経済産業省</div>
+</div>
+<div class="mt-12 pt-8 border-t border-surface-variant">
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        東京都・兵庫県・鳥取県・神戸市 自治体登壇実績あり<br>
+                        ポーラ｜デロイトトーマツ｜三菱グループ 導入企業多数
+                    </p>
+</div>
+</div>
+</section>
+<!-- What We Do Section -->
+<section class="py-section-gap bg-surface-sage/30">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-text mb-4">このセッションでやること</h2>
+<div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<div class="space-y-8 relative">
+<!-- Roadmap Line -->
+<div class="absolute left-[23px] top-4 bottom-4 w-0.5 bg-surface-variant"></div>
+<!-- Steps -->
+<div class="relative flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 shadow-sm font-bold">1</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">今の状態を正確に把握する</h3>
+<p class="text-on-surface-variant">診断データをもとに、今あなたのエネルギーがどこで消耗しているのかを明確にします。（約15分）</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 shadow-sm font-bold">2</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">3ヶ月後のゴールを決める</h3>
+<p class="text-on-surface-variant">「なんとなく良くなりたい」ではなく、あなたにとっての具体的なゴールを一緒に言語化します。（約15分）</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 shadow-sm font-bold">3</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">やめること・やること・順番を決める</h3>
+<p class="text-on-surface-variant">1,600件のデータから導いた、あなたのタイプに合った「最初の一手」を明確にします。（約20分）</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 shadow-sm font-bold">4</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">90日ロードマップを作成する</h3>
+<p class="text-on-surface-variant">セッション後すぐに動けるよう、具体的な行動計画をまとめてお渡しします。（約10分）</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="rounded-3xl overflow-hidden shadow-2xl relative">
+<img alt="" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsKZ5j47BIDzjhx_hNyM9EGafClUOWK14qaoRdM23EakRGNasFnD3IXJO9rilxBadXx8atHQC1yoZQ9YgHFshgWNi6F-edjsBdQzEHhtE2xuBYxftf1uIVEKQ4VVKCWbuIj3OwzWuujMS6zlo-a5oO7MhSb1umbtojLRDd5UpwYVH_H6px4m9N8qzgQoWkFLGyK0Ib9-OBoRGpWZ15pjztGAD--PKK9RA3H3Iz9cox8BCLACLhny8lIXw7b">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<div class="text-white">
+<p class="font-label-sm text-label-sm opacity-80 mb-2">Representative</p>
+<p class="font-headline-md text-headline-md">髙本 玲代</p>
+<p class="text-sm">よりそる代表 / ロードマップ・デザイナー</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Audience Section -->
+<section class="py-section-gap">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="bg-surface-sage rounded-[40px] p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary">psychology</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-text mb-10">こんな方に向けたセッションです</h2>
+<ul class="space-y-6">
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">診断を受けたけど、何から始めればいいかわからない方</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">「分かっているのに動けない」状態が続いている方</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">一人で考え続けて、時間だけが過ぎていると感じている方</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">check_circle</span>
+<span class="text-body-lg font-body-lg text-on-surface">仕事・家庭・体調の問題が重なって、整理がつかない方</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- User Testimonials Section -->
+<section class="py-section-gap bg-surface-bright">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="text-center mb-16">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-text mb-4">セッションを受けた方の変化</h2>
+<p class="text-on-surface-variant font-body-md">多くの女性たちが、自分らしいペースを取り戻しています</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-20 h-20 rounded-full mb-6 overflow-hidden mx-auto md:mx-0">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg0kVTEYeDgm3xecaWtjZH7VjyWl4idW3ga8KZCHqU0tah2A9ndPY3XndiLxTqN8shvYl5vTmiKfE4AOABUP40F9ppQHvEtLOl9DXbf31WcL-ZPSJP2P8OQhQY9On_5r_iaId6kTafZtheiiVSji8LESduHT-sSwiQjoMQEC3BcyP7kKWygL1qb8G3CAHociWMTL2RlGzkpN-7zqGXvtw13lgFF9lmHLtZv8HoP_8g-ukkKB0bNL0pDMJtbUmUTgqTTVvMEbcu2dbI">
+</div>
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="text-on-surface-variant text-body-md leading-relaxed">
+                            子どもの問題を抱えながら、仕事にも前向きになれず鬱々とした日々を過ごしていた方。今では問題にうまく対処できるようになり、仕事も楽しんで取り組めるようになりました。以前と比べて体力もついたといいます。
+                        </p>
+<div class="mt-6 pt-6 border-t border-surface-variant">
+<p class="font-bold text-forest-text">働くママ・Aさん</p>
+<p class="text-xs text-outline">仕事と育児の両立に悩んでいた時期</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-20 h-20 rounded-full mb-6 overflow-hidden mx-auto md:mx-0">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVDu93ZP2CmOqdwH9y86u4IhoQnjacPRN8R4GkISgrp9iAOAenfLoTPpDLfUm6HoHFae6Vvc6-0ZhpjT0UPssZc-nUQHK9KRlhrJsJcffZvLMDzD2w-0JnZKAff1HOOUEmYYlBfFZa8DA9crd_RodNsah76IVxMSdMToiBJ_eBgca-14QSEwrq6bBHTj1248jk-8igpJkvorZ4A3lNz2FKCWiTHvZlDqS95_Zo8NK7PId21shnlk5EBVulEW4f1BiaFnufCQhcmmH5">
+</div>
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="text-on-surface-variant text-body-md leading-relaxed">
+                            介護と自身の不調が重なり、働きたい気持ちはあってもなかなかうまくいかなかった方。今では物事をうまく整理できるようになり、負担なく日々を送れるようになりました。
+                        </p>
+<div class="mt-6 pt-6 border-t border-surface-variant">
+<p class="font-bold text-forest-text">再就職希望・Bさん</p>
+<p class="text-xs text-outline">介護と自身の不調を克服</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-20 h-20 rounded-full mb-6 overflow-hidden mx-auto md:mx-0">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQQYzL_hIOX4LcB06nldkEWzTKhA3DXSAhbm4xCHWTNw91KKW8HpgXO7UkO13AmM8RsmRHEYbyKd9_4S6yic54d-tzgFkt-x0fDAlacaIjcRFWGT0q7s2gsGflEKSw_HnBy7UskRFLa_eXNL6VxpDsPOBdoAu2TTpJMLKe5WSnsWuPbWClDx1q-_aISD0vd0euddltjPzlZms7EFylI_uocVn75O1yRDrdGagkeaDjGDrEp_hsMpjLAdr0hNQfYe5chXFzr8e352go">
+</div>
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="text-on-surface-variant text-body-md leading-relaxed">
+                            夫婦間の衝突が多く、体調もすぐれなかった方。自分が進むべき方向が見えたことで、今ではご夫婦が戦友のような関係になり、仕事でも新しい挑戦ができるほど充実した日々を送っています。
+                        </p>
+<div class="mt-6 pt-6 border-t border-surface-variant">
+<p class="font-bold text-forest-text">起業家・Cさん</p>
+<p class="text-xs text-outline">夫婦関係の改善とキャリアの飛躍</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-section-gap" id="pricing">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="bg-white rounded-[40px] overflow-hidden shadow-xl border border-surface-sage max-w-4xl mx-auto flex flex-col md:flex-row">
+<div class="flex-1 p-8 md:p-12">
+<h3 class="font-headline-md text-headline-md text-forest-text mb-6">90日ロードマップセッション</h3>
+<p class="text-on-surface-variant mb-8">
+                            60分の対話を通じて、迷いを断ち切り、確かな一歩を踏み出すための地図を作成します。
+                        </p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">alarm</span>
+<span class="text-body-md">時間：60分</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">laptop_mac</span>
+<span class="text-body-md">場所：オンライン開催（Zoomなど）</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">lock</span>
+<span class="text-body-md">形式：完全個別対応</span>
+</div>
+</div>
+<div class="text-[48px] font-bold text-on-background mb-4">
+<span class="text-headline-md">¥</span>8,000
+                            <span class="text-body-md text-outline font-normal">（税込）</span>
+</div>
+</div>
+<div class="md:w-80 bg-surface-sage p-8 md:p-12 flex flex-col justify-center text-center">
+<a class="w-full bg-secondary-container text-on-secondary-container py-4 rounded-full font-headline-md text-headline-md mb-4 shadow-md hover:bg-secondary hover:text-white transition-all btn-active-state" href="https://buy.stripe.com/9B63cwg0X6Ue6fk4xg93y14" target="_blank">
+                            今すぐ申し込む
+                        </a>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-6">
+                            お申し込み後、日程調整のご連絡をお送りします。
+                        </p>
+<p class="text-xs text-outline">
+                            ご不明な点は<br>
+<a class="underline hover:text-primary transition-colors" href="mailto:support@yorisol.com">support@yorisol.com</a><br>
+                            までお気軽にどうぞ。
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section class="py-section-gap bg-white">
+  <div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+    <div class="text-center mb-12">
+      <h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-forest-text mb-4">お申し込みの流れ</h2>
+      <div class="w-20 h-1 bg-primary-container mx-auto rounded-full"></div>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>このセッションでやること</h2>
-    <div class="flow">
-      <h3>① 今の状態を正確に把握する（約15分）</h3>
-      <p>診断データをもとに、今あなたのエネルギーがどこで消耗しているのかを明確にします。</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-surface-sage/30 p-8 rounded-3xl text-center">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">1</div>
+        <h3 class="font-headline-md text-headline-md mb-2">申し込み</h3>
+        <p class="text-on-surface-variant">専用フォームよりお申し込みください。</p>
+      </div>
+      <div class="bg-surface-sage/30 p-8 rounded-3xl text-center">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
+        <h3 class="font-headline-md text-headline-md mb-2">日程調整のリンク</h3>
+        <p class="text-on-surface-variant">決済完了後、日程調整用のURLをお送りします。</p>
+      </div>
+      <div class="bg-surface-sage/30 p-8 rounded-3xl text-center">
+        <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
+        <h3 class="font-headline-md text-headline-md mb-2">日程調整</h3>
+        <p class="text-on-surface-variant">ご希望の日時を選択して予約完了です。</p>
+      </div>
     </div>
-    <div class="flow">
-      <h3>② 3ヶ月後のゴールを決める（約15分）</h3>
-      <p>「なんとなく良くなりたい」ではなく、あなたにとっての具体的なゴールを一緒に言語化します。</p>
-    </div>
-    <div class="flow">
-      <h3>③ やめること・やること・順番を決める（約20分）</h3>
-      <p>1,600件のデータから導いた、あなたのタイプに合った「最初の一手」を明確にします。</p>
-    </div>
-    <div class="flow">
-      <h3>④ 90日ロードマップを作成する（約10分）</h3>
-      <p>セッション後すぐに動けるよう、具体的な行動計画をまとめてお渡しします。</p>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div class="section">
-    <h2>こんな方に向けたセッションです</h2>
-    <p>・診断を受けたけど、何から始めればいいかわからない方</p>
-    <p>・「分かっているのに動けない」状態が続いている方</p>
-    <p>・一人で考え続けて、時間だけが過ぎていると感じている方</p>
-    <p>・仕事・家庭・体調の問題が重なって、整理がつかない方</p>
-  </div>
-
-  <hr class="divider">
-
-  <div class="section">
-    <h2>セッションを受けた方の変化</h2>
-    <div class="case">
-      <p>子どもの問題を抱えながら、仕事にも前向きになれず鬱々とした日々を過ごしていた方。今では問題にうまく対処できるようになり、仕事も楽しんで取り組めるようになりました。以前と比べて体力もついたといいます。</p>
-    </div>
-    <div class="case">
-      <p>介護と自身の不調が重なり、働きたい気持ちはあってもなかなかうまくいかなかった方。今では物事をうまく整理できるようになり、負担なく日々を送れるようになりました。</p>
-    </div>
-    <div class="case">
-      <p>夫婦間の衝突が多く、体調もすぐれなかった方。自分が進むべき方向が見えたことで、その通りに進んだ結果、今ではご夫婦が戦友のような関係になり、仕事でも新しい挑戦ができるほど充実した日々を送っています。</p>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div class="section">
-    <div class="price-box">
-      <p class="price-label">90日ロードマップセッション（60分）</p>
-      <div class="price">¥8,000</div>
-      <div class="price-sub">オンライン開催・完全個別対応</div>
-    </div>
-    <a class="cta-btn" href="https://buy.stripe.com/9B63cwg0X6Ue6fk4xg93y14" target="_blank">今すぐ申し込む</a>
-    <p class="note">お申し込み後、日程調整のご連絡をお送りします。<br>ご不明な点は support@yorisol.com までお気軽にどうぞ。</p>
-  </div>
-
-  <div class="footer">
-    <p>© 株式会社よりそる</p>
-    <p style="margin-top:10px;">
-      <a href="https://docs.google.com/document/d/1s0JFnlXSt0dJjBMMBJSeIIePyWYIIGIXxdA-_t9cgj0/edit?usp=sharing" target="_blank">利用規約</a>
-      　｜　
-      <a href="https://yorisol.com/static/tokusho.html" target="_blank">特定商取引法に基づく表記</a>
+    <p class="mt-8 text-center text-sm text-outline">
+      （後日ご都合が悪くなった場合は再度日程調整させていただきます。返金は致しかねます）
     </p>
   </div>
+</section><footer class="bg-surface-sage dark:bg-surface-container-high py-section-gap w-full">
+<div class="max-w-[1140px] mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-outline-variant pb-8 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-forest-text text-[28px]">spa</span>
+<span class="text-headline-md font-headline-md text-forest-text">CounselingSpace</span>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-md">
+                        自分らしい人生のロードマップを描く。私たちは、あなたの「最初の一手」を伴走します。
+                    </p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-forest-text transition-colors" href="https://docs.google.com/document/d/1s0JFnlXSt0dJjBMMBJSeIIePyWYIIGIXxdA-_t9cgj0/edit?usp=sharing" target="_blank">利用規約</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-forest-text transition-colors" href="https://yorisol.com/static/tokusho.html" target="_blank">特定商取引法に基づく表記</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-forest-text transition-colors" href="mailto:support@yorisol.com">Contact Support</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm font-label-sm text-on-surface-variant">
+                    © 2024 CounselingSpace / 株式会社よりそる. All rights reserved.
+                </p>
+<div class="flex gap-6">
+<a class="text-outline hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="text-outline hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Simple Sticky Scroll CTA for Mobile -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-sm z-50 md:hidden pointer-events-none">
+<a class="pointer-events-auto block w-full bg-secondary text-white py-4 rounded-full font-headline-md text-headline-md text-center shadow-2xl btn-active-state animate-bounce-subtle" href="#pricing">
+            今すぐ枠を確保する
+        </a>
+</div>
+<style>
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 3s infinite ease-in-out;
+        }
+    </style>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-  <!-- 固定ボタン -->
-  <div class="sticky-cta">
-    <a href="https://buy.stripe.com/9B63cwg0X6Ue6fk4xg93y14" target="_blank">今すぐ申し込む（¥8,000）</a>
-    <p>90日ロードマップセッション（60分）</p>
-  </div>
+        // Simple header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+                header.classList.add('bg-transparent');
+            }
+        });
+    </script>
 
-</body>
-</html>
+
+</body></html>
